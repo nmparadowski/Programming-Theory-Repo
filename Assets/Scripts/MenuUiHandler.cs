@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -42,7 +39,7 @@ public class MenuUiHandler : MonoBehaviour
     private void StartNewGame()
     {
         GameManager.Instance.SetNewPlayerName(nameInput.text);
-        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
     }
 
     //Exits the game.

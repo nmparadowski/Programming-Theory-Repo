@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using UnityEngine;
 
-//INHERITANCE
+//INHERITANCE - specific singleton controlling the game
 public class GameManager : Singleton<GameManager>
 {
     [Serializable]
@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
 
     private SaveData lastSavedData;
 
+    //ENCAPSULATION - setting can be done by using SetNewPlayerName method
     public string currentPlayer { get; private set; }
 
 
