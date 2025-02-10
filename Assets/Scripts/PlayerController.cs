@@ -4,6 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float speed = 2f;
+    [SerializeField]
+    private GameObject powerupIndicator;
     private Rigidbody playerRb;
 
     public bool hasPowerUp = false;
