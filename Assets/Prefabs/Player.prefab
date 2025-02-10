@@ -147,5 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  powerupIndicator: {fileID: 0}
+  <powerupIndicator>k__BackingField: {fileID: 0}
+  bulletPrefab: {fileID: 7013288211792649139, guid: 76dddbc48fc3cad44ae80a705f8ca0a1,
+    type: 3}
   hasPowerUp: 0
