@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//INHERITANCE
 public class FollowRollingEnemy : Enemy
 {
 
@@ -11,10 +12,10 @@ public class FollowRollingEnemy : Enemy
         Move();
     }
 
+    //POLYMORPHISM
     //Follows the player
     protected override void Move()
     {
-        //POLYMORPHISM
         base.Move();
         if (player == null)
         {

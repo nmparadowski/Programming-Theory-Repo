@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+//INHERITANCE
 public class ImpulseRollingEnemy : Enemy
 {
     private const float MinimalMagnitude = 0.001f;
@@ -18,9 +19,9 @@ public class ImpulseRollingEnemy : Enemy
     }
 
     //Apply impulse force when not moving
+    //POLYMORPHISM
     protected override void Move()
-    {
-        //POLYMORPHISM
+    {       
         base.Move();
         if (player == null)
         {

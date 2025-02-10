@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -51,6 +50,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Checks if collided with collectible
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectible"))
@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Attempts to assign powerup
     private void TryAddingPowerup(Collectible collectible)
     {
         if (collectible == null)
@@ -98,6 +99,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Broadcast necessary infos to managers when detaching powerup
     public void OnPowerupDisabled()
     {
         mainManager.SetPowerup(PowerupType.None);

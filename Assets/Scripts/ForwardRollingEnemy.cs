@@ -1,8 +1,8 @@
 using UnityEngine;
 
+//INHERITANCE
 public class ForwardRollingEnemy : Enemy
 {
-
     private Vector3 initialDirection;
 
     private void Start()
@@ -17,9 +17,9 @@ public class ForwardRollingEnemy : Enemy
     }
 
     //Moves in one direction only
+    //POLYMORPHISM
     protected override void Move()
-    {
-        //POLYMORPHISM
+    {    
         base.Move();
         if (player == null)
         {
