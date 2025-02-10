@@ -17,16 +17,16 @@ public class SmashPowerup : Powerup
 
     private void Start()
     {
-        hangTime = 0.5f;
-        smashSpeed = 15f;
-        explosionForce = 25f;
+        hangTime = 0.25f;
+        smashSpeed = 20f;
+        explosionForce = 30f;
         explosionRadius = 10f;
     }
 
     protected override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !smashing)
         {
             smashing = true;
             StartCoroutine(SmashRoutine());

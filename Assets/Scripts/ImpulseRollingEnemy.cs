@@ -20,6 +20,12 @@ public class ImpulseRollingEnemy : Enemy
     //Apply impulse force when not moving
     protected override void Move()
     {
+        //POLYMORPHISM
+        base.Move();
+        if (player == null)
+        {
+            return;
+        }
         if (rb.velocity.magnitude > MinimalMagnitude)
         {
             return;

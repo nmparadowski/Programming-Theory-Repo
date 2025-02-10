@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Bullet : MonoBehaviour
 {
     private Transform target;
+    //ENCAPSULATION
     private float speed = 15f;
     private bool homing;
-
     private float rocketStrangth = 15f;
-    private float aliveTimer = 5f;
+    private float aliveTimer = 3f;
+
+    private Vector3 moveDir = Vector3.zero;
 
 
     // Update is called once per frame
@@ -17,7 +20,7 @@ public class Bullet : MonoBehaviour
     {
         if (homing && target != null)
         {
-            Vector3 moveDir = (target.transform.position - transform.position).normalized;
+            moveDir = (target.transform.position - transform.position).normalized;
             transform.position += moveDir * speed * Time.deltaTime;
             transform.LookAt(target);
         }

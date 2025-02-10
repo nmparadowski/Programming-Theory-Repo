@@ -13,7 +13,6 @@ public class GameManager : Singleton<GameManager>
     }
 
     private const string ScoreTitle = "Best Score: ";
-
     private SaveData lastSavedData;
 
     //ENCAPSULATION - setting can be done by using SetNewPlayerName method

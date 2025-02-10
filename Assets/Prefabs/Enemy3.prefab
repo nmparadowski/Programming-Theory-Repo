@@ -116,7 +116,7 @@ Rigidbody:
   m_GameObject: {fileID: 7935209017311446627}
   serializedVersion: 4
   m_Mass: 2
-  m_Drag: 6
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -132,7 +132,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &69458029106291046
 MonoBehaviour:
@@ -146,5 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683dab3642caaa8408dddc7937386c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  <speed>k__BackingField: 4
+  <rb>k__BackingField: {fileID: 0}
   player: {fileID: 0}

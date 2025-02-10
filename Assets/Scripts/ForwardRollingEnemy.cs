@@ -19,6 +19,12 @@ public class ForwardRollingEnemy : Enemy
     //Moves in one direction only
     protected override void Move()
     {
+        //POLYMORPHISM
+        base.Move();
+        if (player == null)
+        {
+            return;
+        }
         rb.AddForce(initialDirection * speed);
     }
 }

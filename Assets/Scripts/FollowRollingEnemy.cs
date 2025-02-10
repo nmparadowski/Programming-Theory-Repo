@@ -14,6 +14,12 @@ public class FollowRollingEnemy : Enemy
     //Follows the player
     protected override void Move()
     {
+        //POLYMORPHISM
+        base.Move();
+        if (player == null)
+        {
+            return;
+        }
         Vector3 followDirection = Vector3.ProjectOnPlane((player.transform.position - transform.position).normalized, Vector3.up).normalized;
         rb.AddForce(followDirection * speed);
     }

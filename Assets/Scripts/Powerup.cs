@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
-    private const float lifeTimeDuration = 5f;
+    private const float lifeTimeDuration = 7f;
     private static readonly Color defaultColor = new Color(1f, 09f, 0.1f);
 
     protected PlayerController player;
@@ -16,12 +16,13 @@ public class Powerup : MonoBehaviour
 
     // Start is called before the first frame update
     void Awake()
-    {    
+    {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         playerRb = player.GetComponent<Rigidbody>();
         powerUpIndicator = player.powerupIndicator;
     }
 
+    //Initializes itself
     public void InitializePowerup(Color color)
     {
         powerUpIndicator.gameObject.SetActive(true);
@@ -38,18 +39,20 @@ public class Powerup : MonoBehaviour
         }
         powerUpIndicator.transform.position = playerRb.transform.position + (Vector3.up * -0.38f);
         timeEllapsed += Time.deltaTime;
-        if(timeEllapsed > lifeTimeDuration)
+        if (timeEllapsed > lifeTimeDuration)
         {
 
             RemovePowerup();
         }
     }
 
-    protected void RemovePowerup()
+    //Deinitializes itself from player
+    public void RemovePowerup()
     {
         player.hasPowerUp = false;
-        powerUpIndicator.GetComponent<MeshRenderer>().sharedMaterial.color =defaultColor;
+        powerUpIndicator.GetComponent<MeshRenderer>().sharedMaterial.color = defaultColor;
         powerUpIndicator.gameObject.SetActive(false);
         Destroy(this);
+        player.OnPowerupDisabled();
     }
 }

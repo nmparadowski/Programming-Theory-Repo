@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [field: SerializeField]
+    public float speed { get; private set; } = 2f;
+    [field: SerializeField]
+    public Rigidbody rb { get; private set; }
     [SerializeField]
-    protected float speed = 2f;
-    protected Rigidbody rb;
-    [SerializeField]//jest for inspection if assignment works.
     protected GameObject player;
 
     // Start is called before the first frame update
@@ -15,11 +16,20 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
+    private void Update()
+    {
+        if (player != null)
+        {
+            return;
+        }
+        player = GameObject.Find("Player");
+    }
+
     protected virtual void Move()
     {
-        Debug.Log($"Enemy ({gameObject.name}) is moving - base class");
         if (transform.position.y < -5f)
         {
+            player = null;
             Destroy(gameObject);
         }
     }
